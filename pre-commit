@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+
+filenames = `git diff --cached --name-only`.split("\n")
+
+logFound = false
+
+filenames.each do |fileName|
+	content = file.read
+	if commitFile = ARGV[0]
+		logFound = true
+		puts "[POLICY] Tickets found in file : #{fileName}"
+	end 
+end
+
+if commitFile != ARGV[0]
+	puts "[POLICY] Commit refused, please change title"
+	exit 1
+end
