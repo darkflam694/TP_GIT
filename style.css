@@ -1,0 +1,32 @@
+head, header{
+    background-color: blue;
+    color: blue;
+}
+h1{
+    color: red;
+    background-color: blue;
+}
+h2{
+    background-color: blue;
+}
+ul{
+    background-color: orange;
+}
+#carre1 {
+    height: 90px;
+    width: 90px;
+    background: red;
+    vertical-align: middle;
+
+}
+#carre2 {
+    height: 90px;
+    width: 90px;
+    background: red;
+}
+#carre3 {
+    height: 90px;
+    width: 90px;
+    background: red;
+
+}
