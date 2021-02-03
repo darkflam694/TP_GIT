@@ -1,21 +1,19 @@
 #!/usr/bin/env ruby
 
-logRegex = /console.log(.)/
 
 filenames = `git diff --cached --name-only`.split("\n")
 
 logFound = false
 
 filenames.each do |fileName|
-	file = File.open(fileName)
 	content = file.read
-	if logRegex.match(content)
+	if commitFile = ARGV[0]
 		logFound = true
-		puts "[POLICY] console.log() found in file : #{fileName}"
+		puts "[POLICY] Tickets found in file : #{fileName}"
 	end 
 end
 
-if logFound
-	puts "[POLICY] Commit refused, please remove all your logs"
+if commitFile != ARGV[0]
+	puts "[POLICY] Commit refused, please change title"
 	exit 1
 end
